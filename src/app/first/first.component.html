@@ -1,0 +1,10 @@
+<h3>Je m'appelle {{ name }}</h3>
+
+<div [hidden]="hd" [style.backgroundColor]="bgColor"> Tek-up</div>
+
+<button (click)="changeColor()" class="btn btn-primary">Change Color</button>
+<button (click)="changeHd()" class="btn btn-danger">Change HD</button>
+<br>
+<input [(ngModel)]="name" type="text" class="form-control">
+
+<button (click)="EmitEvt()" class="btn btn-warning">Send Msg To Parent</button>
