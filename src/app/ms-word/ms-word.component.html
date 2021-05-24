@@ -1,0 +1,20 @@
+<div [ngStyle]="{
+    'backgroundColor': bgColor,
+    'color' : textColor,
+    'fontSize' : fontSize,
+    'fontFamily' : fontFamily
+}">Cours d'Angular à Tek-up</div>
+
+<br><br><br>
+
+Background Color : <br>
+<input type="text" class="form-control" [(ngModel)]="bgColor">
+Text Color : <br>
+<input type="text" class="form-control" [(ngModel)]="textColor">
+Text Size : <br>
+<input #akrem type="number" class="form-control" (change)="changeSize(akrem)">
+
+Font-Family :<br>
+<select class="form-control" [(ngModel)]="fontFamily">
+    <option *ngFor="let item of listFonts" [value]="item">{{item}}</option>
+</select>
