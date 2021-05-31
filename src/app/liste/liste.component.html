@@ -1,5 +1,5 @@
 <ol>
-    <app-item *ngFor="let p of tabPersonnes" (msgToList)="RecupPerson($event)" [onePerson]="p"></app-item>
+    <app-item appCustomDir *ngFor="let p of tabPersonnes" (msgToList)="RecupPerson($event)" [onePerson]="p"></app-item>
     <!-- <app-item (msgToList)="RecupPerson($event)" [onePerson]="tabPersonnes[1]"></app-item>
     <app-item (msgToList)="RecupPerson($event)" [onePerson]="tabPersonnes[2]"></app-item> -->
 </ol>
