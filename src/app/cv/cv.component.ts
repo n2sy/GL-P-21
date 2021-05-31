@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Personne } from '../models/personne';
+import { FirstService } from '../services/first.service';
+import { ListPersonnesService } from '../services/list-personnes.service';
 
 @Component({
   selector: 'app-cv',
@@ -7,18 +9,24 @@ import { Personne } from '../models/personne';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-  listPersonne: Personne[] = [
-    new Personne('1', 'Jelassi', 'Nidhal', 'Enseignant', 35, 'nidhal.jpg'),
-    new Personne('2', 'Simpson', 'Bart', 'Ingénieur', 15, 'bart.jpeg'),
-    new Personne('3', 'Simpson', 'Homer', 'Chef de projet', 53, 'homer.jpg'),
-    new Personne('4', 'Simpson', 'Marge', 'Chef de projet', 53),
-  ];
+  listPersonne: Personne[] = [];
   selectedPers: Personne;
-  constructor() {}
+  constructor(private persServ: ListPersonnesService) {
+    //console.log('constructor');
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //console.log('ngOnInit');
+    //this.firstServ.showMsg();
+    this.listPersonne = this.persServ.getListPersonnes();
+  }
 
   RecupPers(p) {
     this.selectedPers = p;
+  }
+
+  addNewPerson() {
+    this.persServ.addPerson();
+    console.log(this.persServ.getListPersonnes());
   }
 }
