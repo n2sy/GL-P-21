@@ -22,4 +22,8 @@ export class ListPersonnesService {
       new Personne('4', 'New', 'Person', 'Chef de projet', 53, 'nidhal.jpg')
     );
   }
+
+  getPersonById(id) {
+    return this.listPersonne.find((p) => p._id == id);
+  }
 }
