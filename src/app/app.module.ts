@@ -24,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InfosComponent } from './infos/infos.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SubModule } from './sub/sub.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UpdateComponent,
     NotFoundComponent,
   ],
-  imports: [BrowserModule, FormsModule, APP_ROUTING],
+  imports: [BrowserModule, FormsModule, APP_ROUTING, SubModule],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })

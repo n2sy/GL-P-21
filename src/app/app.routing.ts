@@ -24,6 +24,7 @@ const myRoutes: Routes = [
   //   },
   { path: 'word', component: MsWordComponent },
   { path: 'servers', component: ServersComponent },
+  { path: 'serveur', loadChildren : '../app/sub/sub.module.ts#SubModule'},
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];

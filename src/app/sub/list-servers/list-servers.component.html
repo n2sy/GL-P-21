@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="list-group">
+                <a class="list-group-item" *ngFor="let serv of listServers" [routerLink]="['/serveur', serv.id]"
+                    [queryParams]="{allowEdit : serv.id == 3 ? 1 : 0 }">
+                    {{ serv.nom }} </a>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
