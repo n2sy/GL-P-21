@@ -5,6 +5,7 @@ import { EditServerComponent } from './edit-server/edit-server.component';
 import { DetailServerComponent } from './detail-server/detail-server.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { SUB_ROUTING } from './sub.routing';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { SUB_ROUTING } from './sub.routing';
   imports: [
   CommonModule,
     BrowserModule,
+    FormsModule,
     SUB_ROUTING
   ]
 })

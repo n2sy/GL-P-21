@@ -2,6 +2,6 @@
 <br>
 <p>Le statut du serveur est {{ myServeur.status }} </p>
 <br>
-<button [disabled]="ds" class="btn btn-info">Editer</button>
+<button [routerLink]="['/serveur', myServeur.id, 'edit']" [disabled]="ds" class="btn btn-info">Editer</button>
 <br>
 <i *ngIf="ds">Impossible d'editer ce serveur !</i>
