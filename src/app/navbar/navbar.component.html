@@ -5,7 +5,11 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" id="profile-tab" [routerLink]="['cv']" routerLinkActive="active"
-            aria-selected="false">CV</a>
+            [routerLinkActiveOptions]="{exact : true}" aria-selected="false">CV</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" [routerLink]="['cv', 'add']" routerLinkActive="active"
+            aria-selected="false">Add CV</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" id="contact-tab" [routerLink]="['servers']" routerLinkActive="active"
@@ -14,5 +18,13 @@
     <li class="nav-item">
         <a class="nav-link" id="contact-tab" [routerLink]="['word']" routerLinkActive="active"
             aria-selected="false">MS-Word</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" [routerLink]="['login']" routerLinkActive="active"
+            aria-selected="false">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" [routerLink]="['register']" routerLinkActive="active"
+            aria-selected="false">Register</a>
     </li>
 </ul>

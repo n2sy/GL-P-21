@@ -1,0 +1,36 @@
+<form #f="ngForm" (ngSubmit)="onRegister(f.value)">
+
+    <!-- <div #cred="ngModelGroup" ngModelGroup="identifiants">
+        <label for="login">Login</label>
+        <input #log="ngModel" ngModel required email type="text" class="form-control" id="login" name="login">
+
+        <label for="login">Mot de passe</label>
+        <input ngModel minlength="6" type="text" class="form-control" id="pwd" name="password">
+        <div *ngIf="cred.invalid && log.touched" class="alert alert-danger">Login et/ou Mot de passe non valides</div>
+    </div> -->
+    <label for="login">Login</label>
+    <input #log="ngModel" ngModel required email type="text" class="form-control" id="login" name="login">
+    <div *ngIf="log.invalid && log.touched" class="alert alert-danger">Veuillez saisir une adresse mail valide</div>
+
+    <label for="login">Mot de passe</label>
+    <input ngModel type="text" class="form-control" id="pwd" name="password">
+
+    <!-- <label for="section">Section</label>
+    <select [ngModel]="defaultSection" class="form-control" id="section" name="section">
+        <option value="gl">Génie Logiciel</option>
+        <option value="dsen">Data Science</option>
+        <option value="dmwm">Développement Mobile</option>
+    </select>
+    <br>
+    <label for="comment">Commentaire</label>
+    <input [(ngModel)]="myComment" type="text" class="form-control" id="comment" name="commentaire">
+    {{ myComment }}
+    <pre>
+        {{ f.value | json}}
+    </pre>
+    <br> -->
+    <button [disabled]="f.invalid" class="btn btn-primary">S'inscrire</button>
+    <!-- <button (click)="resetForm(f)" class="btn btn-danger">Reset</button>
+    <button (click)="GenerateRandomPwd(f)" class="btn btn-info">Random Pwd</button>
+    <button (click)="GenerateRandomPwd2(f)" class="btn btn-success">Random Pwd</button> -->
+</form>

@@ -7,11 +7,16 @@ import { ParentComponent } from './parent/parent.component';
 import { ServersComponent } from './servers/servers.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { AddComponent } from './add/add.component';
+import { RegisterComponent } from './register/register.component';
+import { LoggedGuard } from './logged.guard';
 
 const myRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cv', component: CvComponent },
   { path: 'cv/nidhal', component: ParentComponent },
+  { path: 'cv/add', component: AddComponent, canActivate: [LoggedGuard] },
   { path: 'cv/:id', component: InfosComponent },
   { path: 'cv/edit/:id', component: UpdateComponent },
   //   {
@@ -23,8 +28,10 @@ const myRoutes: Routes = [
   //     ],
   //   },
   { path: 'word', component: MsWordComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'servers', component: ServersComponent },
-  { path: 'serveur', loadChildren : '../app/sub/sub.module.ts#SubModule'},
+  { path: 'serveur', loadChildren: '../app/sub/sub.module.ts#SubModule' },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];

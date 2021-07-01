@@ -25,6 +25,10 @@ import { InfosComponent } from './infos/infos.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SubModule } from './sub/sub.module';
+import { LoginComponent } from './login/login.component';
+import { AddComponent } from './add/add.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +52,17 @@ import { SubModule } from './sub/sub.module';
     InfosComponent,
     UpdateComponent,
     NotFoundComponent,
+    LoginComponent,
+    AddComponent,
+    RegisterComponent,
   ],
-  imports: [BrowserModule, FormsModule, APP_ROUTING, SubModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    APP_ROUTING,
+    SubModule,
+    HttpClientModule,
+  ],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })
