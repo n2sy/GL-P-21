@@ -9,12 +9,11 @@ import { LoginService } from '../services/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
   defaultSection = 'dmwm';
   myComment = 'Rien à signaler...';
   acc = false;
 
-  mySub: Subscription;
   constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {}
@@ -24,7 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   onLogin(f) {
-    let mySub = this.loginService.login(f.value).subscribe(
+    this.loginService.login(f.value).subscribe(
       (response) => {
         console.log(response);
         localStorage.setItem('mytoken', response['token']);
@@ -33,12 +32,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       (error) => {
         console.log(error);
         this.acc = true;
+        f.reset();
       }
     );
-  }
-
-  ngOnDestroy() {
-    this.mySub.unsubscribe();
   }
 
   resetForm(f) {

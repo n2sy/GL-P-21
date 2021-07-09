@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { AddComponent } from './add/add.component';
 import { RegisterComponent } from './register/register.component';
 import { LoggedGuard } from './logged.guard';
+import { ExpdeaGuard } from './expdea.guard';
+import { LogoutGuard } from './logout.guard';
 
 const myRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,7 +30,7 @@ const myRoutes: Routes = [
   //     ],
   //   },
   { path: 'word', component: MsWordComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LogoutGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'servers', component: ServersComponent },
   { path: 'serveur', loadChildren: '../app/sub/sub.module.ts#SubModule' },

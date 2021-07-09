@@ -22,4 +22,8 @@ export class LoginService {
     if (token) return true;
     else return false;
   }
+
+  logout() {
+    localStorage.removeItem('mytoken');
+  }
 }

@@ -29,6 +29,8 @@ import { LoginComponent } from './login/login.component';
 import { AddComponent } from './add/add.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
+import { ExpdeaGuard } from './expdea.guard';
+import { LoginProviderInterceptor } from './login.interceptor';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,7 @@ import { RegisterComponent } from './register/register.component';
     SubModule,
     HttpClientModule,
   ],
-  providers: [FirstService],
+  providers: [FirstService, ExpdeaGuard, LoginProviderInterceptor],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -10,11 +10,12 @@ import { ListPersonnesService } from '../services/list-personnes.service';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-  listPersonne = [];
+  listPersonne;
   selectedPers: Personne;
 
-  constructor(private persServ: ListPersonnesService) //private http: HttpClient
-  {
+  constructor(
+    private persServ: ListPersonnesService //private http: HttpClient
+  ) {
     //console.log('constructor');
   }
 
@@ -23,7 +24,7 @@ export class CvComponent implements OnInit {
     //this.firstServ.showMsg();
     this.persServ.getListPersonnesAPI().subscribe(
       (response) => {
-        this.listPersonne = response['allPersons'];
+        this.listPersonne = response;
       },
       (error) => {
         console.log('Problem with getListPersons', error);
